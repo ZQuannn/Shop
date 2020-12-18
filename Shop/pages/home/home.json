@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-icon": "../../dist/icon/index"
+  },
+  "navigationBarTitleText": "萤火小商城",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#00A92C"
+}

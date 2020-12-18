@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/all/all",
+    "pages/cart/cart",
+    "pages/mine/mine",
+    "pages/goods/goods"
+  ],
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "./images/tabBar/home.png",
+        "selectedIconPath": "./images/tabBar/home_on.png"
+      },
+      {
+        "pagePath": "pages/all/all",
+        "text": "全部",
+        "iconPath": "./images/tabBar/cate.png",
+        "selectedIconPath": "./images/tabBar/cate_on.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "./images/tabBar/cart.png",
+        "selectedIconPath": "./images/tabBar/cart_on.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./images/tabBar/user.png",
+        "selectedIconPath": "./images/tabBar/user_on.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "萤火小商城",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

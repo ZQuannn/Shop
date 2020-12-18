@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-stepper": "../../vant_dist/stepper/index",
+    "van-goods-action": "../../vant_dist/goods-action/index",
+    "van-goods-action-icon": "../../vant_dist/goods-action-icon/index",
+    "van-goods-action-button": "../../vant_dist/goods-action-button/index",
+    "i-icon": "../../dist/icon/index"
+  },
+  "navigationBarTitleText": "商品详情"
+}

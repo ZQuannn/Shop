@@ -1,0 +1,46 @@
+<!--pages/home/home.wxml-->
+<view class="home_wrap">
+  <!--搜索框 -->
+  <view class="home_search">
+    <i-icon class="search_icon" type="search" size="24" color="#999" />
+    搜索商品
+  </view>
+  <!-- Banner轮播图 -->
+  <swiper class="home_banner" indicator-dots="true" autoplay="true" interval="true" duration="true" circular="true"
+    interval="3000" duration="500">
+    <swiper-item wx:for="{{allData.items.n606196612728596.data}}" wx:key="index">
+      <image src="{{item.imgUrl}}"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 新品推荐 -->
+  <view class="home_newgoods">
+    <view class="newgoods_title">新品推荐</view>
+    <view class="newgoods_info">
+      <swiper display-multiple-items="4">
+        <swiper-item wx:for="{{allData.newest}}" wx:key="index" catchtap="goodsInfo" data-item="{{item}}">
+          <image class="newgoods_img" src="{{item.image[0].file_path}}"></image>
+          <view class="newgoods_name">{{item.goods_name}}</view>
+          <view class="newsgoods_price">￥{{item.spec[0].goods_price}}</view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <!-- 猜你喜欢 -->
+  <view class="home_recommend">
+    <view class="recommend_title">
+      <view class="recommend_hr"></view>
+      <view class="recommend_name">猜您喜欢</view>
+      <view class="recommend_hr"></view>
+    </view>
+    <view class="recommend_goods">
+      <view class="recommend_good" wx:for="{{allData.best}}" wx:key="index" catchtap="goodsInfo" data-item="{{item}}">
+        <image src="{{item.image[0].file_path}}"></image>
+        <view class="recommend_good_name">{{item.goods_name}}</view>
+        <view class="recommend_good_price newsgoods_price">￥{{item.spec[0].goods_price}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="home_footer">
+    我是有底线的
+  </view>
+</view>

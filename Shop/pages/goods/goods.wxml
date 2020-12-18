@@ -1,0 +1,68 @@
+<!--pages/goods/goods.wxml-->
+<view class="goods_wrap">
+  <!-- 商品图片 -->
+  <swiper class="goods_banner">
+    <swiper-item wx:for="{{itemInfo.image}}" wx:key="index">
+      <image class="goods_img" src="{{item.file_path}}"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 商品信息 -->
+  <view class="goods_title">
+    <view class="goods_name">{{itemInfo.goods_name}}</view>
+    <view class="goods_price">
+      ￥{{itemInfo.spec[0].goods_price}}
+      <text class="goods_line_price">￥{{itemInfo.spec[0].line_price}}</text>
+    </view>
+    <view class="goods_sale">
+      <view class="goods_sell">销量：{{itemInfo.spec[0].goods_sales}}</view>
+      <view class="goods_stock">库存：{{itemInfo.spec[0].stock_num}}</view>
+    </view>
+  </view>
+  <!-- 商品购买 -->
+  <view class="goods_buy">
+    <view class="goods_num">已选 {{num}}个</view>
+    <view class="goods_add">
+      <view class="goods_add_label">购买数量</view>
+      <view class="goods_add_select">
+        <van-stepper value="{{num}}" bind:change="onChange" input-width="50px" button-size="32px"
+          disable-input="true" />
+      </view>
+    </view>
+  </view>
+  <!-- 商品描述 -->
+  <view class="goods_info">
+    <view class="goods_num">
+      商品描述
+    </view>
+    <rich-text class="allAnswer " nodes='{{itemInfo.content}}'></rich-text>
+  </view>
+</view>
+<!-- 确认 -->
+<view class="goods_confirm">
+  <van-goods-action>
+    <van-goods-action-icon class="footer_box" icon="chat-o" text="客服" catchtap="toContact" />
+    <van-goods-action-icon class="footer_box" icon="cart-o" text="购物车" info="{{confirmNum}}" catchtap="toCart" />
+    <van-goods-action-button class="footer_box" text="加入购物车" type="warning" catchtap="addCart" />
+    <van-goods-action-button class="footer_box" text="立即购买" catchtap="toConfirm" />
+  </van-goods-action>
+
+</view>
+<!-- 侧边栏 -->
+<view class="goAnyWhere">
+  <view hidden="{{!isSalmon}}" class="goAnyWhere_view goAnyWhere_home" catchtap="goAnyWhere"
+    data-url="/pages/home/home">
+    <i-icon type="homepage" size="40" color="#fff" />
+  </view>
+  <view hidden="{{!isSalmon}}" class="goAnyWhere_view goAnyWhere_serach" catchtap="goAnyWhere">
+    <i-icon type="search" size="40" color="#fff" />
+  </view>
+  <view hidden="{{!isSalmon}}" class="goAnyWhere_view goAnyWhere_cart" catchtap="goAnyWhere">
+    <i-icon type="publishgoods_fill" size="40" color="#fff" />
+  </view>
+  <view hidden="{{!isSalmon}}" class="goAnyWhere_view goAnyWhere_mine" catchtap="goAnyWhere">
+    <i-icon type="mine" size="40" color="#fff" />
+  </view>
+  <view class="goAnyWhere_menu" catchtap="goAnyWhere_more" class="{{isSalmon ? 'changeClo' : 'goAnyWhere_view'}}">
+    <i-icon type="other" size="40" color="#fff" />
+  </view>
+</view>

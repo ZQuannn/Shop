@@ -1,0 +1,31 @@
+<!--pages/mine/mine.wxml-->
+<view class="mine_wrap">
+  <view class="mine_header">
+    <image class="mine_head" src="../../images/default-avatar.jpg"></image>
+    <view class="mine_name">测试测试测试</view>
+  </view>
+  <view class="mine_order">
+    <view class="mine_order_header">
+      <view>我的订单</view>
+      <view>全部订单</view>
+    </view>
+    <view class="mine_order_nav">
+      <view>
+        <i-icon type="activity" color="#80848f" size="40"/>
+        <text>全部订单</text>
+      </view>
+      <view>
+        <i-icon type="coupons" color="#80848f" size="40"/>
+        <text>待付款</text>
+      </view>
+      <view>
+        <i-icon type="service" color="#80848f" size="40"/>
+        <text>待发货</text>
+      </view>
+      <view>
+        <i-icon type="clock" color="#80848f" size="40"/>
+        <text>待收货</text>
+      </view>
+    </view>
+  </view>
+</view>
